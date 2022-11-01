@@ -1,0 +1,365 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+with open("1.txt") as file_1:
+    #file 1
+    # read file and make lower case
+    file_1 = open("1.txt","r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_1 = file_1.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[','\\', ']', '^', '_', '{', '|', '}','ö', '\u200a', '–', ',']:
+        file_1 = file_1.replace(str(i), '')
+
+    # remove double ..
+    file_1 = file_1.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_1 = file_1.split('.')
+    file_1 = [[w for w in s.strip().split(' ')
+            if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+           for s in file_1]
+    print(file_1)
+
+#file 2
+with open("2.txt") as file_2:
+    # read file and make lower case
+    file_2 = open("2.txt","r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_2 = file_2.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[','\\', ']', '^', '_', '{', '|', '}','ö', '\u200a', '–', ',']:
+        file_2 = file_2.replace(str(i), '')
+
+    # remove double ..
+    file_2 = file_2.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_2 = file_2.split('.')
+    file_2 = [[w for w in s.strip().split(' ')
+            if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+           for s in file_2]
+    print(file_2)
+
+# file 3
+with open("3.txt") as file_3:
+    # read file and make lower case
+    file_3 = open("3.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_3 = file_3.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_3 = file_3.replace(str(i), '')
+
+    # remove double ..
+    file_3 = file_3.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_3 = file_3.split('.')
+    file_3 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_3]
+    print(file_3)
+
+# file 4
+with open("4.txt") as file_4:
+    # read file and make lower case
+    file_4 = open("4.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_4 = file_4.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_4 = file_4.replace(str(i), '')
+
+    # remove double ..
+    file_4 = file_4.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_4 = file_4.split('.')
+    file_4 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_4]
+    print(file_4)
+
+# file 5
+with open("5.txt") as file_5:
+    # read file and make lower case
+    file_5 = open("5.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_5 = file_5.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_5 = file_5.replace(str(i), '')
+
+    # remove double ..
+    file_5 = file_5.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_5 = file_5.split('.')
+    file_5 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_5]
+    print(file_5)
+
+# file 6
+with open("6.txt") as file_6:
+    # read file and make lower case
+    file_6 = open("6.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_6 = file_6.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_6 = file_6.replace(str(i), '')
+
+    # remove double ..
+    file_6 = file_6.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_6 = file_6.split('.')
+    file_6 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_6]
+    print(file_6)
+
+# file 7
+with open("7.txt") as file_7:
+    # read file and make lower case
+    file_7 = open("7.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_7 = file_7.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_7 = file_7.replace(str(i), '')
+
+    # remove double ..
+    file_7 = file_7.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_7 = file_7.split('.')
+    file_7 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_7]
+    print(file_7)
+
+# file 8
+with open("8.txt") as file_8:
+    # read file and make lower case
+    file_8 = open("8.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_8 = file_8.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_8 = file_8.replace(str(i), '')
+
+    # remove double ..
+    file_8 = file_8.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_8 = file_8.split('.')
+    file_8 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_8]
+    print(file_8)
+
+# file 9
+with open("9.txt") as file_9:
+    # read file and make lower case
+    file_9 = open("9.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_9 = file_9.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_9 = file_9.replace(str(i), '')
+
+    # remove double ..
+    file_9 = file_9.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_9 = file_9.split('.')
+    file_9 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_9]
+    print(file_9)
+
+# file 10
+with open("10.txt") as file_10:
+    # read file and make lower case
+    file_10 = open("10.txt", "r").read().lower()
+
+    # remove numbers
+    for i in range(10):
+        file_10 = file_10.replace(str(i), '')
+
+    # remove punctuation and symbols
+    for i in ['\n', '"', "'", '(', ')', '-', ':', ';', '=', '[', '\\', ']', '^', '_', '{', '|', '}', 'ö', '\u200a',
+              '–', ',']:
+        file_10 = file_10.replace(str(i), '')
+
+    # remove double ..
+    file_10 = file_10.replace('..', '.')
+
+    # Tokenization and removing stopwords
+    file_10 = file_10.split('.')
+    file_10 = [[w for w in s.strip().split(' ')
+               if w not in {"a", "an", "the", "this", "that", "is", "it", "to", "and", "of", "at", "in", "but",
+                            "not", "for", "them", "most", "can", "be", "as", "from", "with", "such", "now", "by",
+                            "may", "other", "what", "about", "usually", "cannot", "but", "only", "which", "each","these",
+                            "have", "when", "another", "often", "all", "before", "many", "could", "between",
+                            "others", "one","will", "after", "like", "do", "where", "on", "if", "however", "always", "rather",
+                            "than", "via","would", "through", "both", "if", "they", "are", "same", "their", "so", "whole", "no",
+                            "its", "does", "than", "more", "itself", "any", "then", "been", " ", "c", "while", "onto",
+                            "example", "around", "whereas", "there", "then", "also", "known", "into", "or", "us", "out", "who",
+                            "has", "how", "he", "kind", "total", "part","within", "had", "how", "ago", "under", "thus", "was", "were",
+                            "also", "into", "onto", "off"}]
+               for s in file_10]
+    print(file_10)
+
+corpus1 = open("1.txt","r").read().lower().split(".")
+corpus2 = open("2.txt","r").read().lower().split(".")
+corpus3 = open("3.txt","r").read().lower().split(".")
+corpus4 = open("4.txt","r").read().lower().split(".")
+corpus5 = open("5.txt","r").read().lower().split(".")
+corpus6 = open("6.txt","r").read().lower().split(".")
+corpus7 = open("7.txt","r").read().lower().split(".")
+corpus8 = open("8.txt","r").read().lower().split(".")
+corpus9 = open("9.txt","r").read().lower().split(".")
+corpus10 = open("10.txt","r").read().lower().split(".")
+vectorizer = TfidfVectorizer()
+X1 = vectorizer.fit_transform(corpus1)
+X2 = vectorizer.fit_transform(corpus2)
+X3 = vectorizer.fit_transform(corpus3)
+X4 = vectorizer.fit_transform(corpus4)
+X5 = vectorizer.fit_transform(corpus5)
+X6 = vectorizer.fit_transform(corpus6)
+X7 = vectorizer.fit_transform(corpus7)
+X8 = vectorizer.fit_transform(corpus8)
+X9 = vectorizer.fit_transform(corpus9)
+X10 = vectorizer.fit_transform(corpus10)
+
+
+print(X1.shape)
+print(X2.shape)
+print(X3.shape)
+print(X4.shape)
+print(X5.shape)
+print(X6.shape)
+print(X7.shape)
+print(X8.shape)
+print(X9.shape)
+print(X10.shape)
+
+vectorizer.get_feature_names()
